@@ -1,19 +1,7 @@
-# Build latest Docker Image
-trigger:
-- main
 - task: Docker@2
   inputs:
     containerRegistry: 'devopspipeline'
-    repository: 'patrickgovus/webapp'
+    repository: 'patrickgovus/devops'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    tags: 'docker pull patrickgovus/devops-app:latest'
-
-
-
-
-pool:
-  vmImage: ubuntu-latest
-
-steps:
-- 
+    tags: 'patrickgovus/devops-app:latest'
