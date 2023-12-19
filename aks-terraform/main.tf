@@ -31,8 +31,8 @@ module "aks_cluster" {
   cluster_location           = "UK South"
   dns_prefix                 = "patrickaksserver"
   kubernetes_version         = "1.27.3"  # Adjust the version as needed
-  service_principal_client_id = "9d7522ef-fda5-4c47-9960-efaccc187371"
-  service_principal_client_secret = "o4u8Q~4NkkPlfKcTUDgItgOfzNhzr2gtOmF19bja"
+  service_principal_client_id = ""
+  service_principal_client_secret = ""
 
   # Input variables referencing outputs from the networking module
   resource_group_name         = module.networking.resource_group_name
