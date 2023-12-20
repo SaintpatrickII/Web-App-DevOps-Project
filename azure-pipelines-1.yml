@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -16,3 +17,12 @@ steps:
     repository: 'patrickgovus/devops-app'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+
+- task: KubernetesManifest@1
+  inputs:
+    action: 'deploy'
+    connectionType: 'azureResourceManager'
+    azureSubscriptionConnection: 'Content Team(62974f8c-157b-47a7-918d-d076da5ee1e4)'
+    azureResourceGroup: 'patrick-devops'
+    kubernetesCluster: 'patrickaks'
+    manifests: 'application-manifest.yaml'
