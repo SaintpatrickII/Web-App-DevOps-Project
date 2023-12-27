@@ -22,6 +22,7 @@ module "networking" {
   vnet_address_space = ["10.0.0.0/16"]
 
 }
+#Three variables here are passed into variables.tf in networking-module to be used to create resources
 
 module "aks_cluster" {
   source = "./aks-cluster-module"
@@ -34,6 +35,8 @@ module "aks_cluster" {
   service_principal_client_id = ""
   service_principal_client_secret = ""
 
+  #New variables are passed into aks-cluster-module into the variables.tf
+
   # Input variables referencing outputs from the networking module
   resource_group_name         = module.networking.resource_group_name
   vnet_id                     = module.networking.vnet_id
@@ -41,7 +44,7 @@ module "aks_cluster" {
   worker_node_subnet_id       = module.networking.worker_node_subnet_id
   aks_nsg_id                  = module.networking.aks_nsg_id
 
-  # Define more input variables as needed...
+  #These variables are passed from networking into the variables of aks-cluster-module to be used
 }
 
 
