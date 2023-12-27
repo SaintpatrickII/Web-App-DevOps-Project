@@ -12,10 +12,10 @@ key_vault_url = 'https://patrickdevops.vault.azure.net/'
 credential = ManagedIdentityCredential()
 secret_client = SecretClient(vault_url=key_vault_url, credential=credential)
 
-db_server = secret_client.get_secret("secret-name").value
-db_database = secret_client.get_secret("secret-name").value
-db_user = secret_client.get_secret("secret-name").value
-db_password = secret_client.get_secret("secret-name").value
+db_server = secret_client.get_secret("backendSQLserver").value
+db_database = secret_client.get_secret("backendSQLdatabasename").value
+db_user = secret_client.get_secret("backendSQLuser").value
+db_password = secret_client.get_secret("backendSQLpassword").value
 
 # Initialise Flask App
 app = Flask(__name__)
