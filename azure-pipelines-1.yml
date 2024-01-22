@@ -33,6 +33,4 @@ steps:
     azureSubscriptionConnection: 'test123'
     azureResourceGroup: 'patrick-devops'
     kubernetesCluster: 'patrickaks'
-    manifests: 'application-manifest.yaml''
-
-
+    manifests: 'application-manifest.yaml'
