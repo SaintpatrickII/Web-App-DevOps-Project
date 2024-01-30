@@ -3,28 +3,47 @@ from sqlalchemy import create_engine, Column, Integer, String, DateTime
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
-from azure.identity import ManagedIdentityCredential
-from azure.keyvault.secrets import SecretClient
+# from azure.identity import ManagedIdentityCredential
+# from azure.keyvault.secrets import SecretClient
 import pyodbc
 import os
 
-key_vault_url = 'https://patrickdevops.vault.azure.net/'
-credential = ManagedIdentityCredential()
-secret_client = SecretClient(vault_url=key_vault_url, credential=credential)
+# key_vault_url = 'https://patrickdevops.vault.azure.net/'
+# credential = ManagedIdentityCredential()
+# secret_client = SecretClient(vault_url=key_vault_url, credential=credential)
 
-db_server = secret_client.get_secret("backendSQLserver").value
-db_database = secret_client.get_secret("backendSQLdatabasename").value
-db_user = secret_client.get_secret("backendSQLuser").value
-db_password = secret_client.get_secret("backendSQLpassword").value
+# db_server = secret_client.get_secret("backendSQLserver").value
+# db_database = secret_client.get_secret("backendSQLdatabasename").value
+# db_user = secret_client.get_secret("backendSQLuser").value
+# db_password = secret_client.get_secret("backendSQLpassword").value
 
 # Initialise Flask App
 app = Flask(__name__)
 
+# # database connection 
+# server = db_server
+# database = db_database
+# username = db_user
+# password = db_password
+# driver= '{ODBC Driver 18 for SQL Server}'
+
+# # Create the connection string
+# connection_string=f'Driver={driver};\
+#     Server=tcp:{server},1433;\
+#     Database={database};\
+#     Uid={username};\
+#     Pwd={password};\
+#     Encrypt=yes;\
+#     TrustServerCertificate=no;\
+#     Connection Timeout=30;'
+
+
+
 # database connection 
-server = db_server
-database = db_database
-username = db_user
-password = db_password
+server = 'devops-project-server.database.windows.net'
+database = 'orders-db'
+username = 'maya'
+password = 'AiCore1237'
 driver= '{ODBC Driver 18 for SQL Server}'
 
 # Create the connection string
@@ -121,3 +140,17 @@ def add_order():
 # run the app
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001, debug=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
