@@ -23,7 +23,6 @@ steps:
     echo $(VERYSECRET)
     echo "Using an input-macro works: "
     echo $(HIDDEN)
-
   env:
     NOT_HIDDEN: $(supersecret)
     HIDDEN: $(VERYSECRET)
