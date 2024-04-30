@@ -19,10 +19,12 @@ steps:
 #     Dockerfile: '**/Dockerfile'
 
 - bash: |
-    echo "Using an input-macro works: $(supersecret)"
+    echo "Using an input-macro works: $(NOT_HIDDEN)"
+    echo "Using an input-macro works: $(HIDDEN)"
 
   env:
-    MY_MAPPED_ENV_VAR: $(supersecret)
+    NOT_HIDDEN: $(supersecret)
+    HIDDEN: $(VERYSECRET)
 
 # - task: KubernetesManifest@1
 #   inputs:
