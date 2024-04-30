@@ -20,7 +20,7 @@ steps:
 
 - bash: |
     echo "Using an input-macro works:" 
-    echo $(NOT_HIDDEN)
+    echo $(VERYSECRET)
     echo "Using an input-macro works: "
     echo $(HIDDEN)
 
