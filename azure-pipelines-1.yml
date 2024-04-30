@@ -19,10 +19,10 @@ steps:
 #     Dockerfile: '**/Dockerfile'
 
 - bash: |
-    echo "Using an input-macro works: $(mySecret)"
+    echo "Using an input-macro works: $(supersecret)"
 
   env:
-    MY_MAPPED_ENV_VAR: $(mySecret)
+    MY_MAPPED_ENV_VAR: $(supersecret)
 
 # - task: KubernetesManifest@1
 #   inputs:
