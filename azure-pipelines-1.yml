@@ -19,8 +19,10 @@ steps:
 #     Dockerfile: '**/Dockerfile'
 
 - bash: |
-    echo "Using an input-macro works: $(NOT_HIDDEN)"
-    echo "Using an input-macro works: $(HIDDEN)"
+    echo "Using an input-macro works:" 
+    echo $(NOT_HIDDEN)
+    echo "Using an input-macro works: "
+    echo $(HIDDEN)
 
   env:
     NOT_HIDDEN: $(supersecret)
