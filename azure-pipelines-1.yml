@@ -35,3 +35,4 @@ steps:
 #     azureResourceGroup: 'patrick-devops'
 #     kubernetesCluster: 'patrickaks'
 #     manifests: 'application-manifest.yaml'
+
